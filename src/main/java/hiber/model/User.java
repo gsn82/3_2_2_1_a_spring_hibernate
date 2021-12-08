@@ -19,11 +19,8 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)    // задаем тип связи
-    @JoinColumn(name = "car_id")            // задаем название столбца
-    private Car car;
-
-    public User() {}
+    public User() {
+    }
 
     public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -61,13 +58,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
     }
 }
